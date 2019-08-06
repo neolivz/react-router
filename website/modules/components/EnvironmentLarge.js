@@ -8,7 +8,6 @@ import EnvironmentHeader from "./EnvironmentHeader";
 import Example from "./Example";
 import Guide from "./Guide";
 import API from "./API";
-import HooksTourAd from "./HooksTourAd";
 
 function EnvironmentLarge({ data, match }) {
   useEffect(
@@ -94,8 +93,21 @@ NavLink.propTypes = {
 function NavLinks({ data, environment }) {
   return (
     <Block lineHeight="1.8" padding="10px">
-      <HooksTourAd />
-
+      <Block>
+        <Title>Announcements</Title>
+        <Block paddingLeft="10px">
+          <Block
+            component="a"
+            hoverTextDecoration="underline"
+            color="black"
+            props={{
+              href: "https://reacttraining.com/blog/reach-react-router-future/"
+            }}
+          >
+            The Future of React Router
+          </Block>
+        </Block>
+      </Block>
       {Array.isArray(data.examples) &&
         data.examples.length > 0 && (
           <Block>
